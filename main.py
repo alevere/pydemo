@@ -13,12 +13,12 @@
 # limitations under the License.
 
 import webapp2
-
+import random
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!!')
+        self.response.write(random.randrange(0, 101, 2))
 
 
 app = webapp2.WSGIApplication([
