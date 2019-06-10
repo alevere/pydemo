@@ -17,8 +17,9 @@ import random
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
+        my_num = random.randrange(0, 101, 2)
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write(random.randrange(0, 101, 2))
+        self.response.write('num:'+ my_num)
 
 
 app = webapp2.WSGIApplication([
