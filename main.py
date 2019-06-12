@@ -18,8 +18,10 @@ import random
 class MainPage(webapp2.RequestHandler):
     def get(self):
         movie_list = ['The Godfather', 'The Wizard of Oz', 'Citizen Kane', 'The Shawshank Redemption', 'Pulp Fiction']
-        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write('<html><head><title>Test</title></head><body>')
         self.response.write(random.choice(movie_list))
+        self.response.write('</body></html>')
 
 
 app = webapp2.WSGIApplication([
